@@ -130,7 +130,7 @@ func (s *Scheduler) Create(ctx context.Context, task *Task, opts ...gax.CallOpti
 		case codes.AlreadyExists:
 			return ErrTaskAlreadyExists
 		default:
-			return err
+			return fmt.Errorf("failed to create task: %w", err)
 		}
 	}
 
@@ -142,7 +142,7 @@ func (s *Scheduler) Delete(ctx context.Context, taskName string, opts ...gax.Cal
 		Name: taskName,
 	}
 	if err := s.client.DeleteTask(ctx, req, opts...); err != nil {
-		return err
+		return fmt.Errorf("failed to delete task: %w", err)
 	}
 
 	return nil

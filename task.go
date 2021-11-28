@@ -16,6 +16,8 @@ const (
 	taskVersionSeparator   = "v"
 )
 
+var ErrInvalidTaskName = errors.New("invalid task name")
+
 type Task struct {
 	QueuePath     string
 	Prefix        string
@@ -125,25 +127,26 @@ func ParseTaskName(prefix, taskName string) (string, int, error) {
 	v := path.Base(taskName)
 
 	if !strings.HasPrefix(v, prefix) {
-		return "", 0, errors.New("task name has no valid prefix")
+		return "", 0, fmt.Errorf("task name has no valid prefix: %w", ErrInvalidTaskName)
 	}
 
 	v = strings.TrimPrefix(v, prefix)
 	tsIdx := strings.LastIndex(v, taskTimestampSeparator)
 	if tsIdx < 0 {
-		return "", 0, errors.New("invalid task name format")
+		return "", 0, fmt.Errorf("invalid task name format: %w", ErrInvalidTaskName)
 	}
 
 	id := v[:tsIdx]
 	v = v[tsIdx+1:]
 	vIdx := strings.LastIndex(v, taskVersionSeparator)
 	if vIdx < 0 {
-		return "", 0, errors.New("task name has no valid version")
+		return "", 0, fmt.Errorf("task name has no valid version: %w", ErrInvalidTaskName)
 	}
 
-	version, err := strconv.Atoi(v[vIdx+1:])
+	vs := v[vIdx+1:]
+	version, err := strconv.Atoi(vs)
 	if err != nil {
-		return "", 0, fmt.Errorf("failed to parse version: %w", err)
+		return "", 0, fmt.Errorf("failed to parse version (%s): %w", vs, ErrInvalidTaskName)
 	}
 
 	return id, version, nil
