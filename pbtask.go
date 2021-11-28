@@ -3,6 +3,7 @@ package scheduler
 import (
 	"bytes"
 	"context"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -11,6 +12,8 @@ import (
 	taskspb "google.golang.org/genproto/googleapis/cloud/tasks/v2"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
+
+var ErrInvalidTask = errors.New("invalid task")
 
 func PbTaskToTask(ctx context.Context, queuePath, taskIDPrefix string, pb *taskspb.Task) (*Task, error) {
 	id, version, err := ParseTaskName(taskIDPrefix, pb.Name)
@@ -34,7 +37,7 @@ func PbTaskToTask(ctx context.Context, queuePath, taskIDPrefix string, pb *tasks
 		}
 		authorizationToken = at
 	default:
-		return nil, fmt.Errorf("unsupported message type: %s", pb.MessageType)
+		return nil, fmt.Errorf("unsupported message type (%s): %w", pb.MessageType, ErrInvalidTask)
 	}
 
 	return &Task{
@@ -66,7 +69,7 @@ func convertHTTPRequest(ctx context.Context, req *taskspb.HttpRequest) (*http.Re
 	case taskspb.HttpMethod_OPTIONS:
 		method = http.MethodOptions
 	default:
-		return nil, fmt.Errorf("unsupported http method: %s", req.HttpMethod.String())
+		return nil, fmt.Errorf("unsupported http method (%s): %w", req.HttpMethod.String(), ErrInvalidTask)
 	}
 
 	var body io.Reader
@@ -104,7 +107,7 @@ func convertAuthorizationToken(req *taskspb.HttpRequest) (isAuthorizationToken, 
 		}, nil
 
 	default:
-		return nil, fmt.Errorf("unsupported authorization header type: %s", h)
+		return nil, fmt.Errorf("unsupported authorization header type (%+v): %w", h, ErrInvalidTask)
 	}
 }
 
