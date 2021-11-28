@@ -3,7 +3,7 @@ module github.com/go-oss/scheduler
 go 1.17
 
 require (
-	cloud.google.com/go/cloudtasks v0.1.0
+	cloud.google.com/go/cloudtasks v1.0.0
 	github.com/golang/mock v1.6.0
 	github.com/googleapis/gax-go v1.0.3
 	github.com/stretchr/testify v1.7.0
