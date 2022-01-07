@@ -7,22 +7,16 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/googleapis/gax-go v1.0.3
 	github.com/stretchr/testify v1.7.0
-	google.golang.org/api v0.62.0
-	google.golang.org/genproto v0.0.0-20211203200212-54befc351ae9
+	google.golang.org/api v0.64.0
+	google.golang.org/genproto v0.0.0-20211223182754-3ac035c7e7cb
 	google.golang.org/grpc v1.42.0
 	google.golang.org/protobuf v1.27.1
 )
 
 require (
-	cloud.google.com/go v0.98.0 // indirect
+	cloud.google.com/go v0.99.0 // indirect
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
-	github.com/cespare/xxhash/v2 v2.1.1 // indirect
-	github.com/cncf/udpa/go v0.0.0-20210930031921-04548b0d99d4 // indirect
-	github.com/cncf/xds/go v0.0.0-20211011173535-cb28da3451f1 // indirect
 	github.com/davecgh/go-spew v1.1.0 // indirect
-	github.com/envoyproxy/go-control-plane v0.9.10-0.20210907150352-cf90f659a021 // indirect
-	github.com/envoyproxy/protoc-gen-validate v0.1.0 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
@@ -34,7 +28,7 @@ require (
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/net v0.0.0-20210503060351-7fd8e65b6420 // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
-	golang.org/x/sys v0.0.0-20211205182925-97ca703d548d // indirect
+	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
 	golang.org/x/text v0.3.6 // indirect
 	golang.org/x/tools v0.1.5 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
