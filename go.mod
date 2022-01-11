@@ -5,7 +5,7 @@ go 1.17
 require (
 	cloud.google.com/go/cloudtasks v1.0.0
 	github.com/golang/mock v1.6.0
-	github.com/googleapis/gax-go v1.0.3
+	github.com/googleapis/gax-go v2.0.2+incompatible
 	github.com/stretchr/testify v1.7.0
 	google.golang.org/api v0.62.0
 	google.golang.org/genproto v0.0.0-20211203200212-54befc351ae9
@@ -15,7 +15,6 @@ require (
 
 require (
 	cloud.google.com/go v0.98.0 // indirect
-	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/cncf/udpa/go v0.0.0-20210930031921-04548b0d99d4 // indirect
@@ -29,16 +28,10 @@ require (
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	golang.org/x/exp v0.0.0-20200224162631-6cc2880d07d6 // indirect
-	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
-	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/net v0.0.0-20210503060351-7fd8e65b6420 // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
 	golang.org/x/sys v0.0.0-20211205182925-97ca703d548d // indirect
 	golang.org/x/text v0.3.6 // indirect
-	golang.org/x/tools v0.1.5 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
-	honnef.co/go/tools v0.0.1-2020.1.4 // indirect
 )
