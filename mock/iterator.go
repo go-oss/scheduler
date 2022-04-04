@@ -10,7 +10,7 @@ import (
 
 	scheduler "github.com/go-oss/scheduler"
 	gomock "github.com/golang/mock/gomock"
-	gax "github.com/googleapis/gax-go"
+	gax "github.com/googleapis/gax-go/v2"
 	iterator "google.golang.org/api/iterator"
 	tasks "google.golang.org/genproto/googleapis/cloud/tasks/v2"
 )

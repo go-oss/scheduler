@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"github.com/googleapis/gax-go"
+	"github.com/googleapis/gax-go/v2"
 )
 
 func (s *Scheduler) SetIterator(f func(...gax.CallOption) *Iterator) {

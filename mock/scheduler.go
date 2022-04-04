@@ -10,7 +10,7 @@ import (
 
 	cloudtasks "cloud.google.com/go/cloudtasks/apiv2"
 	gomock "github.com/golang/mock/gomock"
-	gax "github.com/googleapis/gax-go"
+	gax "github.com/googleapis/gax-go/v2"
 	tasks "google.golang.org/genproto/googleapis/cloud/tasks/v2"
 )
 
