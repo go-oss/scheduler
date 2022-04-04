@@ -6,7 +6,7 @@ require (
 	cloud.google.com/go/cloudtasks v1.3.0
 	github.com/golang/mock v1.6.0
 	github.com/googleapis/gax-go v2.0.2+incompatible
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.7.1
 	google.golang.org/api v0.74.0
 	google.golang.org/genproto v0.0.0-20220324131243-acbaeb5b85eb
 	google.golang.org/grpc v1.45.0
