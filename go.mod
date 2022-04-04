@@ -5,7 +5,7 @@ go 1.17
 require (
 	cloud.google.com/go/cloudtasks v1.3.0
 	github.com/golang/mock v1.6.0
-	github.com/googleapis/gax-go v2.0.2+incompatible
+	github.com/googleapis/gax-go/v2 v2.2.0
 	github.com/stretchr/testify v1.7.1
 	google.golang.org/api v0.74.0
 	google.golang.org/genproto v0.0.0-20220324131243-acbaeb5b85eb
@@ -19,7 +19,6 @@ require (
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.7 // indirect
-	github.com/googleapis/gax-go/v2 v2.2.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/net v0.0.0-20220325170049-de3da57026de // indirect

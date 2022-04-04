@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	cloudtasks "cloud.google.com/go/cloudtasks/apiv2"
-	"github.com/googleapis/gax-go"
+	"github.com/googleapis/gax-go/v2"
 	taskspb "google.golang.org/genproto/googleapis/cloud/tasks/v2"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -24,6 +24,8 @@ type CloudTasksClient interface {
 	CreateTask(ctx context.Context, req *taskspb.CreateTaskRequest, opts ...gax.CallOption) (*taskspb.Task, error)
 	DeleteTask(ctx context.Context, req *taskspb.DeleteTaskRequest, opts ...gax.CallOption) error
 }
+
+var _ CloudTasksClient = (*cloudtasks.Client)(nil)
 
 type Scheduler struct {
 	client    CloudTasksClient

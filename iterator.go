@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	cloudtasks "cloud.google.com/go/cloudtasks/apiv2"
-	"github.com/googleapis/gax-go"
+	"github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
 	taskspb "google.golang.org/genproto/googleapis/cloud/tasks/v2"
 )
