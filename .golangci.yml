@@ -76,7 +76,10 @@ linters-settings:
       - weakCond
       - wrapperFunc
   gci:
-    local-prefixes: github.com/go-oss/scheduler
+    sections:
+      - standard
+      - default
+      - prefix(github.com/go-oss/scheduler)
   exhaustive:
     default-signifies-exhaustive: true
   exhaustivestruct:
